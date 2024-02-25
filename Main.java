@@ -4,20 +4,19 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        String[] NandX = br.readLine().split(" ");
-        int N = Integer.parseInt(NandX[0]);
-        int X = Integer.parseInt(NandX[1]);
+        int N = Integer.parseInt(br.readLine());
 
+        String[] intput = br.readLine().split(" ");
         int[] st = new int[N];
-        String[] strInput = br.readLine().split(" ");
-        for (int i = 0; i < N; i++) {
-            st[i] = Integer.parseInt(strInput[i]);
+        for (int i = 0; i < N; i++) {st[i] = Integer.parseInt(intput[i]);}
+        int max = st[0];
+        int min = st[0];
+        for (int i =1; i< st.length; i++){
+            if(max<st[i]){max = st[i];}
+            if(min>st[i]){min = st[i];}
         }
-        for (int i = 0; i < st.length; i++) {
-            if (st[i] < X) {
-                bw.write(String.valueOf(st[i])+" ");
-            }
-        }
+        bw.write(String.valueOf(min) + " " + String.valueOf(max));
+
         bw.flush();
         br.close();
         bw.close();
