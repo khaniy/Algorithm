@@ -1,25 +1,25 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public  static void main(String [] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String[] NandX = br.readLine().split(" ");
+        int N = Integer.parseInt(NandX[0]);
+        int X = Integer.parseInt(NandX[1]);
 
-        int[] a = new int[n];
-        for(int i=0; i<n; i++) {
-            int num = sc.nextInt();
-            a[i] = num;
+        int[] st = new int[N];
+        String[] strInput = br.readLine().split(" ");
+        for (int i = 0; i < N; i++) {
+            st[i] = Integer.parseInt(strInput[i]);
         }
-        int f = sc.nextInt();
-        int sum = 0;
-        for(int i=0; i<n; i++) {
-            if(a[i]==f) {
-                sum++;
+        for (int i = 0; i < st.length; i++) {
+            if (st[i] < X) {
+                bw.write(String.valueOf(st[i])+" ");
             }
         }
-        System.out.println(sum);
+        bw.flush();
+        br.close();
+        bw.close();
     }
-
-
 }
