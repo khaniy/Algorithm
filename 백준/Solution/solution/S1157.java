@@ -2,6 +2,7 @@ package solution;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class S1157 implements Solution {
     @Override
@@ -9,28 +10,30 @@ public class S1157 implements Solution {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String[] input = br.readLine().split("");
-        HashMap<Integer, Integer> store = new HashMap<>();
+        HashMap<String, Integer> store = new HashMap<>();
         for (String value : input) {
-            int valueByteCode = value.getBytes()[0];
-            int loc = 0;
-            byte aByte = "a".getBytes()[0];
-            byte zByte = "z".getBytes()[0];
-            byte AByte = "A".getBytes()[0];
-            byte ZByte = "Z".getBytes()[0];
-            if (valueByteCode >= aByte || valueByteCode <= zByte) {
-                loc = valueByteCode - aByte;
+            String word = value.toUpperCase();
+            if (store.containsKey(word)) {
+                store.merge(word, 1, Integer::sum);
+            } else {
+                store.put(word, 1);
             }
-            if (valueByteCode >= AByte || valueByteCode <= ZByte) {
-                loc = valueByteCode - AByte;
-            }
-
-            Integer i = store.get(value);
-
         }
+        int max = Integer.MIN_VALUE;
+        String maxKey = null;
+        for (Map.Entry<String, Integer> entry : store.entrySet()) {
+            if (entry.getValue() > max) {
+                max = entry.getValue();
+                maxKey = entry.getKey();
+            }
+            else if (entry.getValue() == max && !entry.getKey().equals(maxKey)) {
+                maxKey = "?";
+            }
+        }
+        bw.write(maxKey);
+
         bw.flush();
         bw.close();
         br.close();
-
-
     }
 }
