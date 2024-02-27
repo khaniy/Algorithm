@@ -1,13 +1,15 @@
 import solution.Solution;
 
+import java.io.IOException;
+
 public class Solver {
-    private Solution solution;
+    private final Solution solution;
 
     public Solver(Solution solution) {
         this.solution = solution;
     }
 
-    public void solve(){
+    public void solve() throws IOException {
         this.solution.solve();
     }
 }
