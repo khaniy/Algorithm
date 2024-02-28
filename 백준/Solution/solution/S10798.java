@@ -14,10 +14,10 @@ public class S10798 implements Solution {
         }
         for(int j=0; j<15; j++){
             for(int i=0; i<5; i++){
-                try{
-                    bw.write(storage[i][j]);
-                }catch (Exception e){
+                if (storage[i].length <= j) {
+                    continue;
                 }
+                bw.write(storage[i][j]);
             }
         }
         bw.close();
