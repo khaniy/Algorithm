@@ -1,12 +1,11 @@
+package solution;
+
 import java.io.*;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+public class S5086 implements Solution {
+    @Override
+    public void solve() throws IOException {
         Scanner sc = new Scanner(System.in);
         while (true) {
             int a = sc.nextInt();
@@ -25,5 +24,4 @@ public class Main {
 
         sc.close();
     }
-
 }
