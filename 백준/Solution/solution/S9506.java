@@ -1,11 +1,11 @@
+package solution;
+
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
+public class S9506 implements Solution {
+    @Override
+    public void solve() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             int n = Integer.parseInt(br.readLine());
@@ -38,6 +38,4 @@ public class Main {
         }
         br.close();
     }
-
-
 }
