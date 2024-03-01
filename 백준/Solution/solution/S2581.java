@@ -1,10 +1,11 @@
+package solution;
+
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
+public class S2581 implements Solution {
+    @Override
+    public void solve() throws IOException {
         Scanner sc = new Scanner(System.in);
         int M = sc.nextInt();
         int N = sc.nextInt();
@@ -41,6 +42,5 @@ public class Main {
         }
         return false;
     }
-
 
 }
