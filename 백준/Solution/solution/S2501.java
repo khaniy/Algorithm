@@ -1,10 +1,14 @@
-import java.io.*;
-import java.util.ArrayList;
+package solution;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class S2501 implements Solution {
+    @Override
+    public void solve() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -25,5 +29,4 @@ public class Main {
         System.out.println(0);
         br.close();
     }
-
 }
