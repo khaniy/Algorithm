@@ -1,10 +1,11 @@
+package solution;
+
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
+public class S27323 implements Solution {
+    @Override
+    public void solve() throws IOException {
         Scanner scanner = new Scanner(System.in);
 
         // 세로 길이 A와 가로 길이 B를 입력 받음
