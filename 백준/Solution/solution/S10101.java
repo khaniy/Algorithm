@@ -1,13 +1,12 @@
-import java.io.IOException;
+package solution;
+
+import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+public class S10101 implements Solution {
+    @Override
+    public void solve() throws IOException {
         Scanner scanner = new Scanner(System.in);
         int[] angles = new int[3];
         for (int i = 0; i < 3; i++) {
