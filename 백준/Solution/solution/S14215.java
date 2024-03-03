@@ -1,14 +1,14 @@
+package solution;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+public class S14215 implements Solution {
+    @Override
+    public void solve() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Scanner sc = new Scanner(System.in);
         int[] lengths = new int[3];
