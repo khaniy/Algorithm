@@ -1,10 +1,12 @@
+package solution;
+
 import java.io.*;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-//        Solver solver = new Solver(new S2738());
-//        solver.solve();
+public class S10431 implements Solution {
+    @Override
+    public void solve() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(br.readLine());
@@ -24,9 +26,7 @@ public class Main {
         }
         bw.close();
         br.close();
-
     }
-
     private static int caculate(int student, int[] store) {
         int count = 0;
         for (int i = 0; i < store.length; i++) {
