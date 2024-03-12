@@ -1,8 +1,11 @@
+package solution;
+
 import java.io.IOException;
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
+public class S9017 implements Solution {
+    @Override
+    public void solve() throws IOException {
         Scanner scanner = new Scanner(System.in);
         int T = scanner.nextInt();
         for (int testCase = 0; testCase < T; testCase++) {
@@ -51,3 +54,4 @@ public class Main {
         scanner.close();
     }
 }
+
