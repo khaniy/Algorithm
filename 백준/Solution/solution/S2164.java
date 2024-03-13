@@ -1,8 +1,12 @@
-import java.io.*;
-import java.util.*;
+package solution;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class S2164 implements Solution {
+    @Override
+    public void solve() throws IOException {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         LinkedList<Integer> store = new LinkedList<>();
@@ -18,7 +22,5 @@ public class Main {
             loop++;
         }
         System.out.println(store.remove());
-
-
     }
 }
