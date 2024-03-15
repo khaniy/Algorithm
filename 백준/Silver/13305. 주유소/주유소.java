@@ -5,21 +5,23 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        int[] roadList = new int[N-1];
-        int[] priceList = new int[N];
+        Long[] roadList = new Long[N-1];
+        Long[] priceList = new Long[N];
         for (int i=0; i<N-1; i++){
-            roadList[i] = sc.nextInt();
+            roadList[i] = sc.nextLong();
         }
         for(int i=0; i<N; i++){
-            priceList[i] = sc.nextInt();
+            priceList[i] = sc.nextLong();
         }
-        int minPrice = Integer.MAX_VALUE;
-        int amt = 0;
+        Long minPrice = Long.MAX_VALUE;
+        long amt = 0;
         for(int i=0; i<priceList.length-1; i++){
             if(priceList[i]<minPrice)
                 minPrice = priceList[i];
-            amt += minPrice * roadList[i];
+            amt += (long) minPrice * roadList[i];
+
         }
         System.out.println(amt);
+
     }
 }
