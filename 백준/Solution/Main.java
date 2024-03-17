@@ -1,35 +1,50 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Main {
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static int N, M, max;
+    static int[] requests;
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+
+        given();
+        when();
+        then();
+    }
+
+    private static void given() throws IOException {
+        N = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int[] requests = new int[N];
+        requests = new int[N];
         for (int i = 0; i < N; i++) {
             requests[i] = Integer.parseInt(st.nextToken());
         }
-        int M = Integer.parseInt(br.readLine());
-
-        System.out.println(findMaxCap(requests, M));
+        M = Integer.parseInt(br.readLine());
     }
 
-    private static int findMaxCap(int[] requests, int totalBudget) {
+    private static int when() {
         int left = 0;
         int right = Arrays.stream(requests).max().getAsInt();
-        int result = 0;
-
+        max = 0;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (check(requests, mid, totalBudget)) {
-                result = mid;
+            if (check(requests, mid, M)) {
+                max = mid;
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         }
-        return result;
+        return max;
+
+    }
+
+    private static void then() {
+        System.out.println(max);
     }
 
     private static boolean check(int[] requests, int cap, int totalBudget) {
