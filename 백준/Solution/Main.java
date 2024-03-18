@@ -1,13 +1,12 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static int N, M, max;
-    static int[] requests;
+    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static int N, X, MAX, COUNT;
+    static int[] input;
+    static StringTokenizer st;
 
     public static void main(String[] args) throws IOException {
 
@@ -17,41 +16,46 @@ public class Main {
     }
 
     private static void given() throws IOException {
-        N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        requests = new int[N];
+        st = new StringTokenizer(br.readLine(), " ");
+        N = Integer.parseInt(st.nextToken());
+        X = Integer.parseInt(st.nextToken());
+        input = new int[N];
+        String[] inputList = br.readLine().split(" ");
         for (int i = 0; i < N; i++) {
-            requests[i] = Integer.parseInt(st.nextToken());
+            input[i] = Integer.parseInt(inputList[i]);
         }
-        M = Integer.parseInt(br.readLine());
     }
-
-    private static int when() {
-        int left = 0;
-        int right = Arrays.stream(requests).max().getAsInt();
-        max = 0;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (check(requests, mid, M)) {
-                max = mid;
-                left = mid + 1;
-            } else {
-                right = mid - 1;
+    private static void when() {
+        int i = 1;
+        MAX = Integer.MIN_VALUE;
+        COUNT = 0;
+        int init = 0;
+        for (int j = 0; j < X; j++)
+           init += input[j];
+        do {
+            init = init - input[i-1] + input[X+i-1];
+            if (init == MAX) {
+                COUNT++;
             }
+            if (init > MAX) {
+                MAX = init;
+                COUNT = 1;
+            }
+            i++;
+        } while (i <= N - X);
+    }
+
+    private static void then() throws IOException {
+        if (MAX == 0)
+            bw.write("SAD");
+        else {
+            bw.write(String.valueOf(MAX));
+            bw.newLine();
+            bw.write(String.valueOf(COUNT));
         }
-        return max;
+        br.close();
+        bw.close();
 
     }
 
-    private static void then() {
-        System.out.println(max);
-    }
-
-    private static boolean check(int[] requests, int cap, int totalBudget) {
-        int sum = 0;
-        for (int request : requests) {
-            sum += Math.min(request, cap);
-        }
-        return sum <= totalBudget;
-    }
 }
