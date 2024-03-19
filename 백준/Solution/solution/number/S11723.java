@@ -1,11 +1,13 @@
 package solution.number;
 
+import solution.SolutionOld;
+
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class S11723 implements Solution {
+public class S11723 implements SolutionOld {
     @Override
     public void solve() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

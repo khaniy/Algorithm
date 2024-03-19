@@ -1,12 +1,14 @@
 package solution.number;
 
+import solution.SolutionOld;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class S5073 implements Solution {
+public class S5073 implements SolutionOld {
     @Override
     public void solve() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

@@ -1,10 +1,12 @@
 package solution.number;
 
+import solution.SolutionOld;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class S10101 implements Solution {
+public class S10101 implements SolutionOld {
     @Override
     public void solve() throws IOException {
         Scanner scanner = new Scanner(System.in);

@@ -1,12 +1,14 @@
 package solution.number;
 
+import solution.SolutionOld;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class S1978 implements Solution {
+public class S1978 implements SolutionOld {
     @Override
     public void solve() throws IOException {
         Scanner sc = new Scanner(System.in);

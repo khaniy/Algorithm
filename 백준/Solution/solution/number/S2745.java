@@ -1,8 +1,10 @@
 package solution.number;
 
+import solution.SolutionOld;
+
 import java.io.*;
 
-public class S2745 implements Solution {
+public class S2745 implements SolutionOld {
     @Override
     public void solve() throws IOException {
 

@@ -1,9 +1,11 @@
 package solution.number;
 
+import solution.SolutionOld;
+
 import java.io.*;
 import java.util.Scanner;
 
-public class S1244 implements Solution {
+public class S1244 implements SolutionOld {
     @Override
     public void solve() throws IOException {
         Scanner sc = new Scanner(System.in);
