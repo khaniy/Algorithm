@@ -1,21 +1,18 @@
+package solution.number;
+
+import solution.Solution;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class S21921 implements Solution {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int N, X, MAX, COUNT;
     static int[] input;
     static StringTokenizer st;
-
-    public static void main(String[] args) throws IOException {
-
-        given();
-        when();
-        then();
-    }
-
-    private static void given() throws IOException {
+    @Override
+    public void given() throws IOException {
         st = new StringTokenizer(br.readLine(), " ");
         N = Integer.parseInt(st.nextToken());
         X = Integer.parseInt(st.nextToken());
@@ -24,13 +21,16 @@ public class Main {
         for (int i = 0; i < N; i++) {
             input[i] = Integer.parseInt(inputList[i]);
         }
+
     }
-    private static void when() {
+
+    @Override
+    public void when() throws IOException {
         int i = 0;
         COUNT = 1;
         int init = 0;
         for (int j = 0; j < X; j++)
-           init += input[j];
+            init += input[j];
         MAX = init;
         do {
             init = init - input[i] + input[X+i];
@@ -45,7 +45,8 @@ public class Main {
         } while (i < N - X);
     }
 
-    private static void then() throws IOException {
+    @Override
+    public void then() throws IOException {
         if (MAX == 0)
             bw.write("SAD");
         else {
@@ -55,7 +56,5 @@ public class Main {
         }
         br.close();
         bw.close();
-
     }
-
 }
