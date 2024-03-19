@@ -1,11 +1,11 @@
 package solution.number;
 
-import solution.SolutionOld;
+import solution.Solution;
 
 import java.io.*;
 import java.util.*;
 
-public class S20920 implements SolutionOld {
+public class S20920 implements Solution {
     @Override
     public void solve() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,12 +1,11 @@
 package solution.number;
 
-import solution.SolutionOld;
+import solution.Solution;
 
 import java.io.*;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class S9063 implements SolutionOld {
+public class S9063 implements Solution {
     @Override
     public void solve() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

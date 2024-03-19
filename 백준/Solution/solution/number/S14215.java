@@ -1,6 +1,6 @@
 package solution.number;
 
-import solution.SolutionOld;
+import solution.Solution;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class S14215 implements SolutionOld {
+public class S14215 implements Solution {
     @Override
     public void solve() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
