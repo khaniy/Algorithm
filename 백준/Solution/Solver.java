@@ -1,15 +1,15 @@
-import solution.Solution;
+import solution.SolutionOld;
 
 import java.io.IOException;
 
 public class Solver {
-    private final Solution solution;
+    private final SolutionOld solutionOld;
 
-    public Solver(Solution solution) {
-        this.solution = solution;
+    public Solver(SolutionOld solutionOld) {
+        this.solutionOld = solutionOld;
     }
 
     public void solve() throws IOException {
-        this.solution.solve();
+        this.solutionOld.solve();
     }
 }
