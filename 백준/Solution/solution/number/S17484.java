@@ -1,18 +1,22 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+package solution.number;
+
+import solution.Solution;
+
+import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
-public class Main {
+public class S17484 implements Solution {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     //    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int N, M, COUNT;
     static int[][] board;
     static int[][][] dp;
     static StringTokenizer st;
-
-    public static void main(String[] args) throws IOException {
+    @Override
+    public void solve() throws IOException {
         given();
         when();
         then();
@@ -66,5 +70,4 @@ public class Main {
     private static void then() throws IOException {
         System.out.println(COUNT);
     }
-
 }

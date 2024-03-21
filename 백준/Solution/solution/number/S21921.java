@@ -1,5 +1,7 @@
 package solution.number;
 
+import solution.Solution;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
@@ -9,7 +11,6 @@ public class S21921 implements Solution {
     static int N, X, MAX, COUNT;
     static int[] input;
     static StringTokenizer st;
-    @Override
     public void given() throws IOException {
         st = new StringTokenizer(br.readLine(), " ");
         N = Integer.parseInt(st.nextToken());
@@ -22,7 +23,6 @@ public class S21921 implements Solution {
 
     }
 
-    @Override
     public void when() throws IOException {
         int i = 0;
         COUNT = 1;
@@ -43,7 +43,6 @@ public class S21921 implements Solution {
         } while (i < N - X);
     }
 
-    @Override
     public void then() throws IOException {
         if (MAX == 0)
             bw.write("SAD");
@@ -54,5 +53,12 @@ public class S21921 implements Solution {
         }
         br.close();
         bw.close();
+    }
+
+    @Override
+    public void solve() throws IOException {
+        given();
+        when();
+        then();
     }
 }
